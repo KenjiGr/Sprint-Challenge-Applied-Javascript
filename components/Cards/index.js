@@ -48,7 +48,12 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
     console.log(response);
     let cardContainer = document.querySelector('.cards-container');
-
+    let cardData = Object.values(response.data.articles);
+    cardData.forEach(element => {
+        element.forEach(item => {
+            cardContainer.append(makeCard(item));
+        });
+    });
 })
 .catch(error =>{
     console.log(error);
