@@ -21,6 +21,7 @@ function Header() {
 
     day.classList.add('date');
     temp.classList.add('temp');
+    head.classList.add('header');
 
     head.appendChild(day);
     head.appendChild(title);
@@ -28,3 +29,5 @@ function Header() {
 
     return head;
 }
+const header = document.querySelector('.header-container');
+header.appendChild(Header());
